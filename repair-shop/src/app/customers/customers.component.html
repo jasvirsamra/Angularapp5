@@ -1,0 +1,16 @@
+<!-- src/app/customers/customers.component.html -->
+<div>
+  <h2>Customers</h2>
+  <form (submit)="addCustomer()">
+    <input type="text" [(ngModel)]="newCustomer.name" placeholder="Name" required />
+    <input type="email" [(ngModel)]="newCustomer.email" placeholder="Email" />
+    <input type="text" [(ngModel)]="newCustomer.phone" placeholder="Phone" />
+    <button type="submit">Add Customer</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let customer of customers">
+      {{ customer.name }} ({{ customer.email }} - {{ customer.phone }})
+    </li>
+  </ul>
+</div>
